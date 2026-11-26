@@ -42,7 +42,7 @@ El compilador controla la firma, pero no que el resultado llegue siempre. Para c
 
 ### Segregación de interfaces: nadie depende de métodos que no usa
 
-Una interfaz tiene solo los métodos que necesita quien la usa. Cuando una feature usa otra, lo hace con una interfaz por rol en el subpaquete `api`, y si necesita algo más, se suma ese método. Si una implementación queda obligada a tener métodos que no le corresponden, la interfaz se divide en interfaces más chicas.
+Una interfaz tiene solo los métodos que necesita quien la usa. Cuando una feature usa otra, lo hace con una interfaz por rol en el subpaquete `api`, y si necesita algo más, se suma ese método. Si una implementación queda obligada a tener métodos que no le corresponden, la interfaz se divide en interfaces más chicas. Vale igual para una clase base: si una subclase queda obligada a heredar un método que no puede cumplir, ese método sale de la clase base y pasa a una interfaz, que implementan solo las subclases que lo necesitan.
 
 `RentalService` usa `CatalogApi`, que tiene solo `findEquipment`, y no `EquipmentService` con sus cinco métodos.
 
